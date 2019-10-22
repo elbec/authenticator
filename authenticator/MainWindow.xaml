@@ -6,7 +6,42 @@
         xmlns:local="clr-namespace:authenticator"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
+
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+    <Label Grid.Column="0" Grid.Row="0">Identity</Label>
+    <Label Grid.Column="0" Grid.Row="1">Secret</Label>
+    <Label Grid.Column="0" Grid.Row="2">QR code</Label>
+
+    <Label Grid.Column="0" Grid.Row="3">Timestamp</Label>
+    <Label Grid.Column="0" Grid.Row="4">Hmac</Label>
+    <Label Grid.Column="0" Grid.Row="5">One-time-password</Label>
+    <Label Grid.Column="0" Grid.Row="6">Seconds to go</Label>
+
+
+    <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding Identity}"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Secret}"></TextBlock>
+    <Image Grid.Column="1" Grid.Row="2" Image.Source="{Binding QRCodeUrl}"></Image>
+        <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding Timestamp}"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="4" Text="{Binding HmacPart1}"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="4" Text="{Binding HmacPart2}"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="4" Text="{Binding HmacPart3}"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="5" Text="{Binding OneTimePassword}"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="6" Text="{Binding SecondsToGo}"></TextBlock>
+
     </Grid>
 </Window>
